@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Header -->
+    <header class="app-header">
+      <h1>🌦️ Weather App</h1>
+      <p>Search a city to see the current weather</p>
+    </header>
+
+    <!-- Search Section -->
+    <!-- A <form> lets both the Search button AND the Enter key trigger "submit" -->
+    <form id="search-form" class="search-form" novalidate>
+      <input
+        type="text"
+        id="city-input"
+        class="search-input"
+        placeholder="Enter city name..."
+        aria-label="City name"
+        autocomplete="off"
+      />
+      <button type="submit" id="search-btn" class="btn btn-primary">Search</button>
+    </form>
+
+    <button type="button" id="location-btn" class="btn btn-secondary">
+      📍 Use My Location
+    </button>
+
+    <!-- Loading and Error messages -->
+    <p id="loading" class="message loading hidden">Loading weather...</p>
+    <p id="error" class="message error hidden" role="alert"></p>
+
+    <!-- Weather Card (hidden until data arrives) -->
+    <section id="weather-card" class="weather-card hidden">
+      <h2 id="city-name" class="city-name"></h2>
+
+      <div class="weather-main">
+        <img id="weather-icon" class="weather-icon" src="" alt="" />
+        <p id="temperature" class="temperature"></p>
+        <p id="condition" class="condition"></p>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail">
+          <span class="detail-label">🌡️ Feels like</span>
+          <span id="feels-like" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">💧 Humidity</span>
+          <span id="humidity" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">💨 Wind</span>
+          <span id="wind" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">⏲️ Pressure</span>
+          <span id="pressure" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">👁️ Visibility</span>
+          <span id="visibility" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">🌅 Sunrise</span>
+          <span id="sunrise" class="detail-value"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">🌇 Sunset</span>
+          <span id="sunset" class="detail-value"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
